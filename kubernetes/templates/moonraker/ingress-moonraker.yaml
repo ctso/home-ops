@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: "${PRINTER_NAME}"
+  name: "${PRINTER_NAME}-moonraker"
 spec:
   ingressClassName: internal
   rules:
