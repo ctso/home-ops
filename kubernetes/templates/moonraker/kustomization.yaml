@@ -6,3 +6,4 @@ resources:
   - ./service-moonraker.yaml
   - ./service-webcam.yaml
   - ./ingress-moonraker.yaml
+  - ./ingress-webcam.yaml
