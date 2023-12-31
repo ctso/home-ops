@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-    - host: &host "${PRINTER_NAME}.c9s.io"
+    - host: &host "printer-${PRINTER_NAME}.c9s.io"
       http:
         paths:
           - path: /
