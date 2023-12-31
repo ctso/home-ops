@@ -14,25 +14,19 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-  install:
-    remediation:
-      retries: 3
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
-  uninstall:
-    keepHistory: false
-  dependsOn:
-    - name: rook-ceph-cluster
-      namespace: rook-ceph
-    - name: volsync
-      namespace: storage
+
   values:
     controllers:
       main:
-        annotations:
-          reloader.stakater.com/auto: "true"
+        pod:
+          annotations:
+            k8s.v1.cni.cncf.io/networks: |
+              [{
+                "name": "multus-lan",
+                "namespace": "networking",
+                "ips": ["10.19.2.6/24"]
+              }]
+
         containers:
           main:
             image:
@@ -40,36 +34,23 @@ spec:
               tag: 2023.12.4
             env:
               TZ: America/Los_Angeles
-            envFrom: *envFrom
             probes:
-              liveness:
-                enabled: false
-              readiness:
-                enabled: false
-              startup:
-                enabled: false
-            securityContext:
-              allowPrivilegeEscalation: false
-              readOnlyRootFilesystem: true
-              capabilities: { drop: ["ALL"] }
+              liveness: { enabled: false }
+              readiness: { enabled: false }
+              startup: { enabled: false }
             resources:
-              limits: &resources
-                memory: 1Gi
               requests:
-                <<: *resources
-                cpu: 10m
-        pod:
-          securityContext:
-            runAsUser: 568
-            runAsGroup: 568
-            runAsNonRoot: true
-            fsGroup: 568
-            fsGroupChangePolicy: OnRootMismatch
+                cpu: 500m
+                memory: 1Gi
+              limits:
+                memory: 2Gi
+
     service:
       main:
         ports:
           http:
             port: 8123
+
     ingress:
       main:
         enabled: true
@@ -77,7 +58,7 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: external.c9s.io
         hosts:
-          - host: &host "{{ .Release.Name }}.c9s.io"
+          - host: &host homeassistant.c9s.io
             paths:
               - path: /
                 service:
@@ -86,9 +67,12 @@ spec:
         tls:
           - hosts:
               - *host
+
     persistence:
       config:
         enabled: true
-        existingClaim: home-assistant
-      tmp:
-        type: emptyDir
+        existingClaim: "${VOLSYNC_CLAIM}"
+        advancedMounts:
+          main:
+            main:
+              - path: /config
