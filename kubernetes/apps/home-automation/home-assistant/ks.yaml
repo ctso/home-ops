@@ -16,6 +16,10 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
+  dependsOn:
+    - name: multus-config
+    - name: rook-ceph-cluster
+    - name: volsync
   interval: 30m
   retryInterval: 1m
   timeout: 5m
