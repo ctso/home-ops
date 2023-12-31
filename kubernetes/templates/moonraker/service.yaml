@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: "${PRINTER_NAME}-moonraker"
+subsets:
+  - addresses:
+      - ip: "${PRINTER_IP}"
+    ports:
+      - port: 7125
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "${PRINTER_NAME}-moonraker"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 7125
+      targetPort: 7125
+      protocol: TCP

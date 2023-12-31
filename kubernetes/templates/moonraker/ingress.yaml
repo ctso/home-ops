@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "${PRINTER_NAME}"
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "${PRINTER_NAME}.c9s.io"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: "${PRINTER_NAME}-moonraker"
+                port:
+                  number: 7125
+  tls:
+    - hosts:
+        - *host
