@@ -41,7 +41,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: &host fluidd.c9s.io
+          - host: &host "fluidd.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:

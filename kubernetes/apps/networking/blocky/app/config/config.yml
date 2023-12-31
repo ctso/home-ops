@@ -8,7 +8,7 @@ upstream:
 customDNS:
 conditional:
   mapping:
-    c9s.io: tcp+udp:10.19.1.54
+    ${SECRET_DOMAIN}: tcp+udp:10.19.1.54
 blocking:
   blackLists:
     ads:

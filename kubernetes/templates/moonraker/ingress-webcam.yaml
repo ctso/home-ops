@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-    - host: &host "printer-${PRINTER_NAME}.c9s.io"
+    - host: &host "printer-${PRINTER_NAME}.${SECRET_DOMAIN}"
       http:
         paths:
           - path: /webcam(/|$)(.*)

@@ -56,9 +56,9 @@ spec:
         enabled: true
         className: external
         annotations:
-          external-dns.alpha.kubernetes.io/target: external.c9s.io
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hosts:
-          - host: &host homeassistant.c9s.io
+          - host: &host "homeassistant.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:

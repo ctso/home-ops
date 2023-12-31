@@ -81,7 +81,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: &host zwave.c9s.io
+          - host: &host "zwave.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:

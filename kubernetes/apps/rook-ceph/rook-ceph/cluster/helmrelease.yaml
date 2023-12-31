@@ -37,7 +37,7 @@ spec:
       dashboard:
         ingressClassName: internal
         host:
-          name: &host rook.c9s.io
+          name: &host "rook.${SECRET_DOMAIN}"
           path: /
         tls:
           - hosts:
