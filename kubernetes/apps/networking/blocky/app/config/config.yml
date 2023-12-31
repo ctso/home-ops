@@ -1,0 +1,35 @@
+port: 53
+httpPort: 4000
+bootstrapDns: tcp+udp:10.43.0.10
+upstream:
+  default:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+customDNS:
+conditional:
+  mapping:
+    c9s.io: tcp+udp:10.19.1.53
+blocking:
+  blackLists:
+    ads:
+      - https://raw.githubusercontent.com/zoonderkins/dbl-oisd-nl/master/dbl.txt
+    excluded:
+      - |
+        # no blocking
+  whiteLists:
+    ads:
+      - https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
+  clientGroupsBlock:
+    default:
+      - ads
+    10.19.2.107/32:
+      - excluded
+clientLookup:
+  upstream: tcp+udp:10.19.1.1
+prometheus:
+  enable: true
+  path: /metrics
+logFormat: json
+filtering:
+  queryTypes:
+    - 'AAAA'

@@ -1,0 +1,82 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: blocky
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 2.4.0
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    controllers:
+      main:
+        replicas: 2
+        strategy: RollingUpdate
+        pod:
+          topologySpreadConstraints:
+            - maxSkew: 1
+              topologyKey: kubernetes.io/hostname
+              whenUnsatisfiable: DoNotSchedule
+              labelSelector:
+                matchLabels:
+                  app.kubernetes.io/name: *app
+        containers:
+          main:
+            image:
+              repository: ghcr.io/0xerr0r/blocky
+              tag: v0.22
+            probes:
+              liveness: &probes
+                enabled: true
+                custom: true
+                spec:
+                  exec:
+                    command:
+                      - /app/blocky
+                      - healthcheck
+                    initialDelaySeconds: 30
+                    periodSeconds: 10
+                    timeoutSeconds: 1
+                    failureThreshold: 3A
+              readiness: *probes
+              startup:
+                enabled: false
+            resources:
+              requests:
+                cpu: 10M
+                memory: 256Mi
+              limits:
+                memory: 1024Mi
+    service:
+      main:
+        ports:
+          http:
+            port: 4000
+      dns:
+        controller: main
+        type: LoadBalancer
+        annotations:
+          io.cilium/lb-ipam-ips: "10.19.1.12"
+        ports:
+          dns-tcp:
+            enabled: true
+            port: 53
+            protocol: TCP
+          dns-udp:
+            enabled: true
+            port: 53
+            protocol: UDP
+    persistence:
+      config:
+        enabled: true
+        type: configMap
+        name: blocky
+        globalMounts:
+          - path: /app/config.yml
+            subPath: config.yml
