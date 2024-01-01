@@ -16,8 +16,7 @@ spec:
   values:
     controllers:
       main:
-        replicas: 3
-        strategy: RollingUpdate
+        type: daemonset
         pod:
           topologySpreadConstraints:
             - maxSkew: 1
