@@ -19,7 +19,6 @@ spec:
     controllers:
       main:
         annotations:
-          setGateway: "true"
           reloader.stakater.com/auto: "true"
         containers:
           main:
@@ -52,6 +51,8 @@ spec:
               limits:
                 memory: 8Gi
         pod:
+          annotations:
+            setGateway: "true"
           securityContext:
             runAsUser: 568
             runAsGroup: 568
