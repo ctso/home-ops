@@ -35,6 +35,16 @@ spec:
                 sabnzbd.download.svc.cluster,
                 sabnzbd.download.svc.cluster.local,
                 sabnzbd.${SECRET_DOMAIN}
+              SABNZBD__API_KEY:
+                valueFrom:
+                  secretKeyRef:
+                    name: sabnzbd
+                    key: api_key
+              SABNZBD__NZB_KEY:
+                valueFrom:
+                  secretKeyRef:
+                    name: sabnzbd
+                    key: nzb_key
             resources:
               requests:
                 cpu: 200m
