@@ -58,8 +58,6 @@ spec:
             runAsNonRoot: true
             fsGroup: 568
             fsGroupChangePolicy: OnRootMismatch
-          annotations:
-            setGateway: "true"
     service:
       main:
         ports:
