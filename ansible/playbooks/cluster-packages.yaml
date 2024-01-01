@@ -1,0 +1,35 @@
+- name: Install packages
+  hosts: kubernetes
+  become: true
+  gather_facts: true
+  any_errors_fatal: true
+  pre_tasks:
+    - name: Pausing for 5 seconds...
+      ansible.builtin.pause:
+        seconds: 5
+  tasks:
+    - name: Upgrade all system packages
+      ansible.builtin.apt:
+        upgrade: full
+        update_cache: true
+        cache_valid_time: 3600
+        autoclean: true
+        autoremove: true
+      register: apt_upgrade
+      retries: 5
+      until: apt_upgrade is success
+
+    - name: Install common packages
+      ansible.builtin.apt:
+        name:
+          - htop
+          - vim-nox
+          - firmware-amd-graphics
+        install_recommends: false
+        update_cache: true
+        cache_valid_time: 3600
+        autoclean: true
+        autoremove: true
+      register: apt_install_common
+      retries: 5
+      until: apt_install_common is success
