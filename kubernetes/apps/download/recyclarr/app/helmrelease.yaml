@@ -21,7 +21,7 @@ spec:
         annotations:
           reloader.stakater.com/auto: "true"
         cronjob:
-          schedule: "@daily"
+          schedule: "*/5 * * * *"
         containers:
           main:
             image:
