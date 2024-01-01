@@ -1,0 +1,59 @@
+---
+- name: install wireguard
+  ansible.builtin.apt:
+    name: wireguard
+    state: latest
+
+- name: wireguard | enable ip forwarding
+  ansible.posix.sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: wireguard | copy up script
+  ansible.builtin.copy:
+    src: files/script-up.sh
+    dest: /usr/local/sbin/wireguard-up.sh
+    mode: 0755
+    owner: root
+    group: root
+
+- name: wireguard | copy down script
+  ansible.builtin.copy:
+    src: files/script-down.sh
+    dest: /usr/local/sbin/wireguard-down.sh
+    mode: 0755
+    owner: root
+    group: root
+
+- name: wireguard | copy systemd service config
+  ansible.builtin.copy:
+    src: files/systemd-service.conf
+    dest: /etc/systemd/system/wireguard-config.service
+  register: systemd_service
+
+- name: wireguard | copy systemd path config
+  ansible.builtin.copy:
+    src: files/systemd-path.conf
+    dest: /etc/systemd/system/wireguard-config.path
+  register: systemd_path
+
+- name: wireguard | reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: yes
+  when: systemd_path.changed or systemd_service.changed
+
+- name: wireguard | enable units
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: yes
+  with_items:
+    - wireguard-config.service
+    - wireguard-config.path
+
+- name: wireguard | start units
+  ansible.builtin.systemd:
+    name: wireguard-config.path
+    state: started

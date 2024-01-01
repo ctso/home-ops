@@ -12,3 +12,7 @@ kubernetes:
         k8s-3:
           ansible_user: ctso
           ansible_host: 10.19.1.43
+wireguard:
+  hosts:
+    rpi-vpn:
+      ansible_host: 10.19.2.10
