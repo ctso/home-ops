@@ -56,8 +56,10 @@ spec:
               requests:
                 cpu: 100m
                 memory: 512Mi
+                amd.com/gpu: 1
               limits:
                 memory: 4Gi
+                amd.com/gpu: 1
         statefulset:
           volumeClaimTemplates:
             - name: config
