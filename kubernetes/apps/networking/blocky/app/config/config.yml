@@ -14,7 +14,7 @@ conditional:
 blocking:
   blackLists:
     ads:
-      - https://raw.githubusercontent.com/zoonderkins/dbl-oisd-nl/master/dbl.txt
+      - https://small.oisd.nl
     excluded:
       - |
         # no blocking
