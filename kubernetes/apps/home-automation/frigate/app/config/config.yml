@@ -53,8 +53,8 @@ go2rtc:
     frigate_driveway_hq: rtspx://10.19.1.2:7441/WjHw7xRNPgqzniwQ
     frigate_garage_lq: rtspx://10.19.1.2:7441/KJwxanJXFkLWnP0Z
     frigate_garage_hq: rtspx://10.19.1.2:7441/GzFDm5cobcQIRFw5
-    frigate_doorbell_lq: rtsp://admin:{REOLINK_PASSWORD}@10.19.3.213:554/h264Preview_01_sub
-    frigate_doorbell_hq: rtsp://admin:{REOLINK_PASSWORD}@10.19.3.213:554/h264Preview_01_main
+    frigate_doorbell_lq: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@10.19.3.213:554/h264Preview_01_sub
+    frigate_doorbell_hq: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@10.19.3.213:554/h264Preview_01_main
 
 cameras:
   driveway:
