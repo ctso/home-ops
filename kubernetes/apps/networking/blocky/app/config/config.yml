@@ -7,6 +7,7 @@ upstream:
     - https://dns.google/dns-query
 customDNS:
 conditional:
+  fallbackUpstream: true
   mapping:
     ${SECRET_DOMAIN}: tcp+udp:10.19.1.54
 blocking:
