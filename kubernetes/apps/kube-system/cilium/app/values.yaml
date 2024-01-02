@@ -1,18 +1,23 @@
-autoDirectNodeRoutes: true
-bpf:
-  masquerade: true
-bgp:
-  enabled: false
 cluster:
   name: home-cluster
   id: 1
+
 cni:
   exclusive: false
+
+autoDirectNodeRoutes: true
+
+bpf:
+  masquerade: true
+  tproxy: true
+
+bgp:
+  enabled: false
+
 containerRuntime:
   integration: containerd
   socketPath: /var/run/k3s/containerd/containerd.sock
-endpointRoutes:
-  enabled: true
+
 hubble:
   enabled: true
   metrics:
@@ -49,6 +54,7 @@ hubble:
       tls:
         - hosts:
             - "hubble.${SECRET_DOMAIN}"
+
 ipam:
   mode: kubernetes
 ipv4NativeRoutingCIDR: "${CLUSTER_CIDR}"
