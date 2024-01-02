@@ -1,0 +1,74 @@
+---
+logger:
+  default: info
+
+database:
+  path: /data/frigate.db
+
+detectors:
+  coral:
+    type: edgetpu
+    device: pci
+
+ffmpeg:
+  global_args: ["-hide_banner", "-loglevel", "warning"]
+  hwaccel_args: ["-hwaccel", "vaapi", "-hwaccel_device", "/dev/dri/renderD128", "-hwaccel_output_format", "yuv420p"]
+  output_args:
+    record: preset-record-ubiquiti
+
+snapshots:
+  enabled: true
+  timestamp: false
+  bounding_box: true
+  retain:
+    default: 2
+
+record:
+  enabled: true
+  retain:
+    days: 2
+    mode: all
+  events:
+    retain:
+      default: 2
+      mode: active_objects
+
+objects:
+  track: ["person", "dog", "car"]
+  filters:
+    person:
+      min_area: 5000
+      max_area: 100000
+      threshold: 0.7
+
+go2rtc:
+  streams:
+    frigate_driveway_lq: rtspx://10.19.1.2:7441/IqFZ153hVOH6xWuz
+    frigate_driveway_hq: rtspx://10.19.1.2:7441/WjHw7xRNPgqzniwQ
+    frigate_garage_lq: rtspx://10.19.1.2:7441/KJwxanJXFkLWnP0Z
+    frigate_garage_hq: rtspx://10.19.1.2:7441/GzFDm5cobcQIRFw5
+
+cameras:
+  frigate_driveway:
+    ffmpeg:
+      inputs:
+        - path: rtsp://localhost:8554/frigate_driveway_lq
+          roles: ["detect"]
+        - path: rtsp://localhost:8554/frigate_driveway_hq
+          roles: ["record"]
+    detect:
+      width: 640
+      height: 360
+      fps: 10
+
+  frigate_garage:
+    ffmpeg:
+      inputs:
+        - path: rtsp://localhost:8554/frigate_garage_lq
+          roles: ["detect"]
+        - path: rtsp://localhost:8554/frigate_garage_hq
+          roles: ["record"]
+    detect:
+      width: 640
+      height: 360
+      fps: 10
