@@ -56,8 +56,6 @@ spec:
         controller: main
         type: LoadBalancer
         externalTrafficPolicy: Cluster
-        annotations:
-          io.cilium/lb-ipam-ips: "10.19.1.53"
         ports:
           dns-tcp:
             enabled: true
