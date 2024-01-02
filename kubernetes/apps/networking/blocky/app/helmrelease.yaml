@@ -67,6 +67,8 @@ spec:
             enabled: true
             port: 53
             protocol: UDP
+    serviceMonitor:
+      enabled: true
     persistence:
       config:
         enabled: true
