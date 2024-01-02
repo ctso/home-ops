@@ -16,7 +16,8 @@ spec:
   values:
     controllers:
       main:
-        type: daemonset
+        replicas: 2
+        strategy: RollingUpdate
         containers:
           main:
             image:
