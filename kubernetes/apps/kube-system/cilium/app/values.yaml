@@ -7,7 +7,7 @@ cni:
   exclusive: false
 
 bgp:
-  enabled: false
+  enabled: true
   announce:
     loadbalancerIP: true
     podCIDR: false
