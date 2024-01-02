@@ -24,7 +24,7 @@ blocking:
   clientGroupsBlock:
     default:
       - ads
-    10.19.2.107/32:
+    10.19.2.147/32:
       - excluded
 clientLookup:
   upstream: tcp+udp:10.19.1.1
