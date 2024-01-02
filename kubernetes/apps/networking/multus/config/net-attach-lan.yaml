@@ -10,9 +10,9 @@ spec:
       "name": "multus-lan",
       "plugins": [
         {
-          "type": "vlan",
-          "master": "eth0",
-          "vlanId": 2,
+          "type": "macvlan",
+          "master": "eth0.2",
+          "mode": "bridge",
           "capabilities": {
             "ips": true
           },
