@@ -40,7 +40,7 @@ metadata:
   name: blocky-pool
 spec:
   cidrs:
-    - cidr: 10.53.53.53/31
+    - cidr: 10.53.53.53/30
   serviceSelector:
     matchLabels:
       app.kubernetes.io/service: blocky-dns
