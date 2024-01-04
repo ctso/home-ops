@@ -47,6 +47,9 @@ objects:
       max_area: 100000
       threshold: 0.7
 
+audio:
+  enabled: true
+
 go2rtc:
   streams:
     frigate_driveway_lq: rtspx://10.19.1.2:7441/IqFZ153hVOH6xWuz
@@ -65,7 +68,7 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_driveway_lq
-          roles: ["detect"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_driveway_hq
           roles: ["record"]
     detect:
@@ -89,7 +92,7 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_doorbell_lq
-          roles: ["detect"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_doorbell_hq
           roles: ["record"]
     detect:
@@ -101,7 +104,7 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_penny_lq
-          roles: ["detect"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_penny_hq
           roles: ["record"]
     detect:
