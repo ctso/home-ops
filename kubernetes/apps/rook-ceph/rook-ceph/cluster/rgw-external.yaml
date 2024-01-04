@@ -16,7 +16,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-    - host: &host rook-ceph-rgw.${SECRET_DOMAIN}
+    - host: &host ceph-s3.${SECRET_DOMAIN}
       http:
         paths:
           - backend:
