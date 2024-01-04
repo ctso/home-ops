@@ -82,7 +82,7 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_garage_lq
-          roles: ["detect"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_garage_hq
           roles: ["record"]
     detect:
@@ -118,7 +118,7 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_package_lq
-          roles: ["detect"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_package_hq
           roles: ["record"]
     detect:
