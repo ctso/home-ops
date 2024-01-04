@@ -2,8 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: vsftp
-  namespace: crystalnet
+  name: paperless-ftp
 spec:
   interval: 5m
   chart:
@@ -12,7 +11,7 @@ spec:
       version: 2.4.0
       sourceRef:
         kind: HelmRepository
-        name: common-helm
+        name: bjw-s
         namespace: flux-system
       interval: 1m
   values:
