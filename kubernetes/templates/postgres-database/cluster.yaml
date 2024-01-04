@@ -5,21 +5,6 @@ metadata:
   name: "${APP}"
 spec:
   postgresVersion: 15
-  dataSource:
-    pgbackrest:
-      stanza: db
-      configuration:
-        - secret:
-            name: pgo-s3-creds
-      global:
-        repo1-path: "/${APP}/repo1"
-        repo1-s3-uri-style: path
-      repo:
-        name: repo1
-        s3:
-          bucket: "c9s-postgres"
-          endpoint: "${SECRET_CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com"
-          region: "us-east-1"
   patroni:
     dynamicConfiguration:
       synchronous_mode: true
