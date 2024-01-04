@@ -33,9 +33,11 @@ spec:
                     name: paperless-secret
                     key: PAPERLESS_FTP_PASSWORD
               PASV_ADDRESS: &ipaddr 10.19.96.100
-              PASV_MIN: 21100
-              PASV_MAX: 21103
+              PASV_MIN_PORT: 21100
+              PASV_MAX_PORT: 21103
               LOG_STDOUT: "true"
+              REVERSE_LOOKUP_ENABLE: "false"
+
 
     service:
       main:
