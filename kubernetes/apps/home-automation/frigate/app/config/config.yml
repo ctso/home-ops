@@ -62,6 +62,8 @@ go2rtc:
     frigate_penny_hq: rtspx://10.19.1.2:7441/GxLlVg1VDH6Xg3UR
     frigate_package_hq: rtspx://10.19.1.2:7441/3ukyRqs4xFzEsQCX
     frigate_package_lq: rtspx://10.19.1.2:7441/Soojo08SvgiioUEc
+    frigate_living_room_lq: rtspx://10.19.1.2:7441/m2ObtOh0cHVkWo37
+    frigate_living_room_hq: rtspx://10.19.1.2:7441/bsJxnITzpvQrX0LY
 
 cameras:
   driveway:
@@ -118,6 +120,18 @@ cameras:
         - path: rtsp://localhost:8554/frigate_package_lq
           roles: ["detect"]
         - path: rtsp://localhost:8554/frigate_package_hq
+          roles: ["record"]
+    detect:
+      width: 640
+      height: 360
+      fps: 10
+
+  living_room:
+    ffmpeg:
+      inputs:
+        - path: rtsp://localhost:8554/frigate_living_room_lq
+          roles: ["detect", "audio"]
+        - path: rtsp://localhost:8554/frigate_living_room_hq
           roles: ["record"]
     detect:
       width: 640
