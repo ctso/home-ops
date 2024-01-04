@@ -95,7 +95,7 @@ spec:
     persistence:
       data:
         enabled: true
-        existingClaim: "${VOLSYNC_CLAIM}"
+        existingClaim: "paperless"
         advancedMounts:
           main:
             main:
