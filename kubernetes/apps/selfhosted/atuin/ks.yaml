@@ -11,7 +11,7 @@ spec:
     labels:
       app.kubernetes.io/name: *app
   interval: 10m
-  path: "./kubernetes/main/apps/selfhosted/atuin/app"
+  path: "./kubernetes/apps/selfhosted/atuin/app"
   prune: true
   sourceRef:
     kind: GitRepository
