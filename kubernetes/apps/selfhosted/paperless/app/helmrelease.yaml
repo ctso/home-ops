@@ -27,6 +27,8 @@ spec:
             image:
               repository: ghcr.io/paperless-ngx/paperless-ngx
               tag: 2.2.1
+            probes:
+              startup: { enabled: false }
             env:
               # Configure application
               PAPERLESS_SECRET_KEY:
