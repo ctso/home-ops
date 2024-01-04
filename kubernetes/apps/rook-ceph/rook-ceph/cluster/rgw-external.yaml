@@ -1,0 +1,31 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/ceph.rook.io/cephobjectstoreuser_v1.json
+apiVersion: ceph.rook.io/v1
+kind: CephObjectStoreUser
+metadata:
+  name: cluster-admin
+spec:
+  # https://rook.io/docs/rook/v1.13/Storage-Configuration/Object-Storage-RGW/object-storage/
+  store: ceph-objectstore
+  displayName: Cluster Admin
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rook-ceph-rgw
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host rook-ceph-rgw.${SECRET_DOMAIN}
+      http:
+        paths:
+          - backend:
+              service:
+                name: rook-ceph-rgw-ceph-objectstore
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - *host
