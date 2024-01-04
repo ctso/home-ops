@@ -82,6 +82,13 @@ spec:
                 service:
                   name: main
                   port: http
+              - path: /outpost.goauthentik.io
+                pathType: Prefix
+                service:
+                  name: ak-outpost-internal
+                  namespace: security
+                  port:
+                    name: http
         tls:
           - hosts:
               - *host
