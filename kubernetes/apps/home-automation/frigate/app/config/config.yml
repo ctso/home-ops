@@ -50,7 +50,6 @@ objects:
 audio:
   enabled: true
   listen:
-  listen:
     - ambulance
     - bark
     - bicycle
