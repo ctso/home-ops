@@ -10,7 +10,7 @@ customDNS:
 conditional:
   fallbackUpstream: true
   mapping:
-    ${SECRET_DOMAIN}: tcp+udp:10.19.1.53
+    ${SECRET_DOMAIN}: tcp+udp:10.19.96.53
 blocking:
   blackLists:
     ads:
