@@ -1,0 +1,34 @@
+{
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "helm"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchPackageNames": [
+        "cert-manager",
+        "kube-prometheus-stack",
+        "node-feature-discovery",
+        "reloader"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/home-assistant/home-assistant"
+      ]
+    }
+  ]
+}
