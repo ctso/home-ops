@@ -36,11 +36,14 @@ record:
     mode: all
   events:
     retain:
-      default: 2
+      default: 14
       mode: active_objects
 
 objects:
-  track: ["person", "dog", "car"]
+  track:
+    - car
+    - dog
+    - person
   filters:
     person:
       min_area: 5000
