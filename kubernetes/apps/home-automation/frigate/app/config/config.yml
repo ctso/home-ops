@@ -150,7 +150,7 @@ cameras:
       fps: 10
 
   living_room:
-    objects:
+    detect:
       enabled: false
     ffmpeg:
       inputs:
