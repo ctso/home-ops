@@ -151,7 +151,7 @@ cameras:
 
   living_room:
     objects:
-      disabled: true
+      enabled: false
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_living_room_lq
