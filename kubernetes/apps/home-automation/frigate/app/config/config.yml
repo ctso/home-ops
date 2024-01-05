@@ -41,7 +41,6 @@ record:
 
 objects:
   track:
-    - car
     - dog
     - person
   filters:
@@ -95,7 +94,13 @@ cameras:
       width: 640
       height: 360
       fps: 10
-
+    objects:
+      track:
+        - bicycle
+        - car
+        - cat
+        - dog
+        - person
   garage:
     ffmpeg:
       inputs:
