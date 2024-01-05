@@ -49,7 +49,23 @@ objects:
 
 audio:
   enabled: true
-
+  listen:
+  listen:
+    - ambulance
+    - bark
+    - bicycle
+    - boom
+    - eruption
+    - fire_alarm
+    - fire_truck
+    - firecracker
+    - fireworks
+    - glass
+    - gunshot
+    - police_car
+    - scream
+    - shatter
+    - yell
 go2rtc:
   streams:
     frigate_driveway_lq: rtspx://10.19.1.2:7441/IqFZ153hVOH6xWuz
