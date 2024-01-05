@@ -8,6 +8,9 @@ mqtt:
   user: "{FRIGATE_MQTT_USERNAME}"
   password: "{FRIGATE_MQTT_PASSWORD}"
 
+model:
+  path: plus://28928a5c0eb9667ea825e0a92be656e7
+
 database:
   path: /data/frigate.db
 
@@ -44,10 +47,31 @@ objects:
     - dog
     - person
   filters:
+    dog:
+      min_score: .7
+      threshold: .9
+    cat:
+      min_score: .65
+      threshold: .8
+    face:
+      min_score: .7
+    package:
+      min_score: .65
+      threshold: .9
+    license_plate:
+      min_score: .6
+    amazon:
+      min_score: .75
+    ups:
+      min_score: .75
+    fedex:
+      min_score: .75
     person:
-      min_area: 5000
-      max_area: 100000
-      threshold: 0.7
+      min_score: .65
+      threshold: .85
+    car:
+      min_score: .65
+      threshold: .85
 
 audio:
   enabled: true
@@ -96,10 +120,10 @@ cameras:
       fps: 10
     objects:
       track:
-        - bicycle
         - car
         - cat
         - dog
+        - package
         - person
   garage:
     ffmpeg:
@@ -124,7 +148,12 @@ cameras:
       width: 640
       height: 480
       fps: 10
-
+    objects:
+      track:
+        - cat
+        - dog
+        - package
+        - person
   penny:
     ffmpeg:
       inputs:
@@ -148,6 +177,9 @@ cameras:
       width: 640
       height: 360
       fps: 10
+    objects:
+      track:
+        - package
 
   living_room:
     detect:
