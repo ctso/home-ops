@@ -155,6 +155,6 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_living_room_lq
-          roles: ["audio"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_living_room_hq
           roles: ["record"]
