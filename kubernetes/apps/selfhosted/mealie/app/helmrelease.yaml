@@ -32,7 +32,7 @@ spec:
               tag: v1.0.0-RC2
             env:
               ALLOW_SIGNUP: "false"
-              BASE_URL: *host
+              BASE_URL: https://mealie.${SECRET_DOMAIN}
               DB_ENGINE: sqlite
             resources:
               requests:
