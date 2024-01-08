@@ -32,7 +32,7 @@ spec:
               tag: v1.0.0-RC2
             env:
               ALLOW_SIGNUP: "false"
-              BASE_URL: &host https://mealie.${SECRET_DOMAIN}
+              BASE_URL: *host
               DB_ENGINE: sqlite
             resources:
               requests:
@@ -52,7 +52,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: *host
+          - host: &host mealie.${SECRET_DOMAIN}
             paths:
               - path: /
                 service:
