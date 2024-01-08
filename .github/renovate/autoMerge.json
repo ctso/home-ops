@@ -26,8 +26,8 @@
       "matchUpdateTypes": [
         "patch"
       ],
-      "matchPackageNames": [
-        "ghcr.io/home-assistant/home-assistant"
+      "matchPackagePattern": [
+        "ghcr.io/home-assistant"
       ]
     }
   ]
