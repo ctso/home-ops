@@ -154,6 +154,10 @@ cameras:
         - dog
         - package
         - person
+      filters:
+        person:
+          mask:
+            - 0,480,640,480,640,216,372,214,281,212,203,212,0,171
   penny:
     ffmpeg:
       inputs:
