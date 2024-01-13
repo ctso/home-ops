@@ -23,7 +23,7 @@ spec:
           main:
             image:
               repository: ghcr.io/blakeblackshear/frigate
-              tag: 0.13.0-beta7@sha256:c94995428b22a8eda07f92d7e47df5b9405240afbd5754def32e807183d88359
+              tag: 0.13.0-rc1@sha256:6c025273d44b9ace9afc7cf7fc79b2c559f46bcdf8930c6f78a3478ffae1b3cc
             env:
               TZ: America/Los_Angeles
             envFrom:
