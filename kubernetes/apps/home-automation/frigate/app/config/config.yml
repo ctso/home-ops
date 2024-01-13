@@ -165,6 +165,9 @@ cameras:
       width: 640
       height: 360
       fps: 10
+    objects:
+      track:
+        - dog
 
   package:
     ffmpeg:
