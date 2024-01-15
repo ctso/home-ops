@@ -31,7 +31,7 @@ spec:
               repository: ghcr.io/mealie-recipes/mealie
               tag: v1.0.0-RC2
             env:
-              ALLOW_SIGNUP: "false"
+              ALLOW_SIGNUP: "true"
               BASE_URL: https://mealie.${SECRET_DOMAIN}
               DB_ENGINE: sqlite
             resources:
