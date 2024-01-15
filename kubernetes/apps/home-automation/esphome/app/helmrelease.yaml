@@ -23,14 +23,6 @@ spec:
         annotations:
           secret.reloader.stakater.com/reload: esphome
 
-        pod:
-          annotations:
-            k8s.v1.cni.cncf.io/networks: |
-              [{
-                "name": "multus-lan",
-                "namespace": "networking",
-                "ips": ["10.19.2.8/24"]
-              }]
         containers:
           main:
             image:
