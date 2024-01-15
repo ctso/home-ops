@@ -1,0 +1,18 @@
+---
+authentication_backend:
+  file:
+    path: /config/users.yaml
+
+access_control:
+  default_policy: one_factor
+  networks:
+    - name: internal
+      networks: ["10.0.0.0/8"]
+  rules: []
+
+session:
+  cookies:
+    - name: authelia_session
+      domain: "${SECRET_DOMAIN}"
+      authelia_url: https://auth.${SECRET_DOMAIN}
+      default_redirection_url: https://auth.${SECRET_DOMAIN}
