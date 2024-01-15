@@ -67,6 +67,8 @@ spec:
       tailnet:
         controller: main
         type: LoadBalancer
+        annotations:
+          io.cilium/lb-ipam-ips: "10.19.96.96"
         ports:
           tailnet-udp:
             enabled: true
