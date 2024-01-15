@@ -31,6 +31,9 @@ spec:
       GF_SECURITY_COOKIE_SAMESITE: grafana
       GF_SERVER_ROOT_URL: https://grafana.${SECRET_DOMAIN}
 
+    envFromSecrets:
+      - name: *secret
+
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
