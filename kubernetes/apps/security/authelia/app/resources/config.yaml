@@ -16,3 +16,7 @@ session:
       domain: "${SECRET_DOMAIN}"
       authelia_url: https://auth.${SECRET_DOMAIN}
       default_redirection_url: https://${SECRET_DOMAIN}
+
+storage:
+  local:
+    path: /data/db.sqlite3

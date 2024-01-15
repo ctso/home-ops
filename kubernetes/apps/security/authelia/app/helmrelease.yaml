@@ -119,3 +119,9 @@ spec:
           - path: /config/users.yaml
             subPath: users.yaml
             readOnly: true
+      data:
+        enabled: true
+        type: emptyDir
+        globalMounts:
+          - path: /data
+            readOnly: false
