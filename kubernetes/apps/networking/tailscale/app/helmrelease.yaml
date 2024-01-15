@@ -27,7 +27,7 @@ spec:
               NO_AUTOUPDATE: true
               PORT: &port "41642"
               TS_EXTRA_ARGS: --advertise-exit-node --advertise-tags=tag:k8s
-              TS_KUBE_SECRET: "tailscale-state"
+              TS_KUBE_SECRET: ""
               TS_ROUTES: 10.19.96.0/24
               TS_TAILSCALED_EXTRA_ARGS: --debug=0.0.0.0:2000
               TS_USERSPACE: true
