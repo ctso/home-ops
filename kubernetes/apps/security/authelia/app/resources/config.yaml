@@ -20,3 +20,8 @@ session:
 storage:
   local:
     path: /data/db.sqlite3
+
+notifier:
+  disable_startup_check: true
+  filesystem:
+    filename: /data/notification.txt
