@@ -25,7 +25,7 @@ spec:
               tag: v1.56.1@sha256:ac0c192f6cba52877e4d9c2fe8943f16c0ab44927605a21416852590e3ccb71e
             env:
               NO_AUTOUPDATE: true
-              PORT: "41642"
+              PORT: &port "41642"
               TS_EXTRA_ARGS: --advertise-exit-node --advertise-tags=tag:k8s
               TS_KUBE_SECRET: "tailscale-state"
               TS_ROUTES: 10.19.96.0/24
@@ -66,10 +66,6 @@ spec:
       tailnet:
         controller: main
         type: LoadBalancer
-        annotations:
-          io.cilium/lb-ipam-ips: ${TAILSCALE_LB_IP}
-        labels:
-          io.cilium/lb-ipam-layer2: "true"
         ports:
           tailnet-udp:
             enabled: true
