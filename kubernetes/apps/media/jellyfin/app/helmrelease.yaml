@@ -92,6 +92,7 @@ spec:
               - *host
       tailscale:
         enabled: true
+        name: tailscale
         className: tailscale
         hosts:
           - paths:
