@@ -94,12 +94,12 @@ spec:
         enabled: true
         name: tailscale
         className: tailscale
-        hosts:
-          - paths:
-              - path: /
-                service:
-                  name: main
-                  port: http
+        hosts: []
+        defaultBackend:
+          service:
+            name: jellyfin
+            port:
+              number: 8096
         tls:
           - hosts:
               - jellyfin
