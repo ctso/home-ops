@@ -32,7 +32,7 @@ spec:
       GF_SERVER_ROOT_URL: https://grafana.${SECRET_DOMAIN}
 
     envFromSecrets:
-      - name: *secret
+      - name: grafana-secret
 
     dashboardProviders:
       dashboardproviders.yaml:
