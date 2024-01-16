@@ -23,6 +23,9 @@ spec:
             image:
               repository: rhasspy/wyoming-piper
               tag: 1.4.0
+            args:
+              - --voice
+              - en_US-ryan-medium
             resources:
               requests:
                 cpu: 10m
