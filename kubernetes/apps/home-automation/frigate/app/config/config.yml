@@ -93,25 +93,20 @@ audio:
     - yell
 go2rtc:
   streams:
-    frigate_driveway_lq: rtspx://10.19.1.2:7441/IqFZ153hVOH6xWuz
-    frigate_driveway_hq: rtspx://10.19.1.2:7441/WjHw7xRNPgqzniwQ
-    frigate_garage_lq: rtspx://10.19.1.2:7441/KJwxanJXFkLWnP0Z
-    frigate_garage_hq: rtspx://10.19.1.2:7441/GzFDm5cobcQIRFw5
+    driveway: rtspx://10.19.1.2:7441/WjHw7xRNPgqzniwQ
+    garage: rtspx://10.19.1.2:7441/GzFDm5cobcQIRFw5
     doorbell: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@10.19.3.213:554/h264Preview_01_main
-    frigate_penny_lq: rtspx://10.19.1.2:7441/sU72sRrCCgUcpD6u
-    frigate_penny_hq: rtspx://10.19.1.2:7441/GxLlVg1VDH6Xg3UR
-    frigate_package_hq: rtspx://10.19.1.2:7441/3ukyRqs4xFzEsQCX
-    frigate_package_lq: rtspx://10.19.1.2:7441/Soojo08SvgiioUEc
-    frigate_living_room_lq: rtspx://10.19.1.2:7441/m2ObtOh0cHVkWo37
-    frigate_living_room_hq: rtspx://10.19.1.2:7441/bsJxnITzpvQrX0LY
+    penny: rtspx://10.19.1.2:7441/GxLlVg1VDH6Xg3UR
+    package: rtspx://10.19.1.2:7441/3ukyRqs4xFzEsQCX
+    living_room: rtspx://10.19.1.2:7441/bsJxnITzpvQrX0LY
 
 cameras:
   driveway:
     ffmpeg:
       inputs:
-        - path: rtsp://localhost:8554/frigate_driveway_lq
+        - path: rtspx://10.19.1.2:7441/IqFZ153hVOH6xWuz
           roles: ["detect", "audio"]
-        - path: rtsp://localhost:8554/frigate_driveway_hq
+        - path: rtsp://localhost:8554/driveway
           roles: ["record"]
     detect:
       width: 640
@@ -127,9 +122,9 @@ cameras:
   garage:
     ffmpeg:
       inputs:
-        - path: rtsp://localhost:8554/frigate_garage_lq
+        - path: rtspx://10.19.1.2:7441/KJwxanJXFkLWnP0Z
           roles: ["detect", "audio"]
-        - path: rtsp://localhost:8554/frigate_garage_hq
+        - path: rtsp://localhost:8554/garage
           roles: ["record"]
     detect:
       width: 640
@@ -160,9 +155,9 @@ cameras:
   penny:
     ffmpeg:
       inputs:
-        - path: rtsp://localhost:8554/frigate_penny_lq
+        - path: rtspx://10.19.1.2:7441/sU72sRrCCgUcpD6u
           roles: ["detect", "audio"]
-        - path: rtsp://localhost:8554/frigate_penny_hq
+        - path: rtsp://localhost:8554/penny
           roles: ["record"]
     detect:
       width: 640
@@ -175,9 +170,9 @@ cameras:
   package:
     ffmpeg:
       inputs:
-        - path: rtsp://localhost:8554/frigate_package_lq
+        - path: rtspx://10.19.1.2:7441/Soojo08SvgiioUEc
           roles: ["detect", "audio"]
-        - path: rtsp://localhost:8554/frigate_package_hq
+        - path: rtsp://localhost:8554/package
           roles: ["record"]
     detect:
       width: 640
@@ -192,7 +187,7 @@ cameras:
       enabled: false
     ffmpeg:
       inputs:
-        - path: rtsp://localhost:8554/frigate_living_room_lq
+        - path: rtspx://10.19.1.2:7441/m2ObtOh0cHVkWo3
           roles: ["detect", "audio"]
-        - path: rtsp://localhost:8554/frigate_living_room_hq
+        - path: rtsp://localhost:8554/living_room
           roles: ["record"]
