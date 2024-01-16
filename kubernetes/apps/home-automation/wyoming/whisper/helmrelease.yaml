@@ -38,6 +38,8 @@ spec:
     service:
       main:
         ports:
+          http:
+            enabled: false
           wyoming:
             port: 10300
 
