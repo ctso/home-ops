@@ -23,4 +23,5 @@ spec:
     name: home-kubernetes
   postBuild:
     substitute:
+      APP: *app
       VOLSYNC_CAPACITY: 1Gi
