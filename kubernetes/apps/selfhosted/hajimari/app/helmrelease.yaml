@@ -20,10 +20,13 @@ spec:
       strategy: RollingUpdate
     hajimari:
       title: ${SECRET_DOMAIN}
+      lightTheme: gazette
+      darkTheme: tron
       namespaceSelector:
         matchNames:
           - home-automation
           - selfhosted
+      showGreeting: false
     ingress:
       main:
         enabled: true
