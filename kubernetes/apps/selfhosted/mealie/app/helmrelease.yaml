@@ -51,6 +51,9 @@ spec:
       main:
         enabled: true
         className: internal
+        annotations:
+          hajimari.io/enable: "true"
+          hajimari.io/icon: mdi:food
         hosts:
           - host: &host mealie.${SECRET_DOMAIN}
             paths:
