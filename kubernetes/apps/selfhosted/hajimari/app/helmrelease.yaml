@@ -38,6 +38,8 @@ spec:
         tls:
           - hosts:
               - "hajimari.${SECRET_DOMAIN}"
+    podAnnotations:
+      configmap.reloader.stakater.com/reload: "hajimari-settings"
     persistence:
       data:
         enabled: true
