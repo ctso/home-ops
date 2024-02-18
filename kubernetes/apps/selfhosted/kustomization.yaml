@@ -8,5 +8,4 @@ resources:
   - ./atuin/ks.yaml
   - ./hajimari/ks.yaml
   - ./mealie/ks.yaml
-  - ./miniflux/ks.yaml
   - ./paperless/ks.yaml
