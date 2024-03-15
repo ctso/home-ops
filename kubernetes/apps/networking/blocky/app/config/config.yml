@@ -3,7 +3,6 @@ httpPort: 4000
 bootstrapDns: tcp+udp:10.43.0.10
 upstream:
   default:
-    - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
     - https://dns.quad9.net/dns-query
 customDNS:
