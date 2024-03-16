@@ -9,7 +9,7 @@ mqtt:
   password: "{FRIGATE_MQTT_PASSWORD}"
 
 model:
-  path: plus://28928a5c0eb9667ea825e0a92be656e7
+  path: plus://4922a46b9c7b78298ce28d7d4c0ed895
 
 database:
   path: /data/frigate.db
