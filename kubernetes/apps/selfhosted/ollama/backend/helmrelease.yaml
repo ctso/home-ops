@@ -48,6 +48,6 @@ spec:
 
     persistence:
       data:
-        existingClaim: olama-backend
+        existingClaim: ollama-backend
         globalMounts:
           - path: /root/.ollama
