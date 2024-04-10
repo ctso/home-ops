@@ -165,7 +165,7 @@ spec:
       auth.generic_oauth.group_mapping:
         org_id: 1
         role_attribute_path: |
-          'Admin'
+            contains(groups[*], 'admin') && 'Admin' || contains(groups[*], 'people') && 'Viewer'
         allow_assign_grafana_admin: true
       auth.basic:
         enabled: false
