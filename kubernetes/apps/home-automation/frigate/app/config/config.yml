@@ -14,10 +14,10 @@ model:
 database:
   path: /data/frigate.db
 
-#detectors:
-#  coral:
-#    type: edgetpu
-#    device: pci
+detectors:
+  cpu:
+    type: cpu
+    num_threads: 8
 
 ffmpeg:
   global_args: ["-hide_banner", "-loglevel", "warning"]
