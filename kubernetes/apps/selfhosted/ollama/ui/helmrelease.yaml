@@ -62,3 +62,9 @@ spec:
         tls:
           - hosts:
               - *host
+
+    persistence:
+      data:
+        existingClaim: ollama-ui
+        globalMounts:
+          - path: /app/backend/data
