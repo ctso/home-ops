@@ -31,7 +31,7 @@ spec:
               repository: ghcr.io/open-webui/open-webui
               tag: main
             env:
-              OLLAMA_BASE_URL: http://ollama-backend.selfhosted.svc:11434
+              OLLAMA_BASE_URL: http://10.19.2.201:11434
             resources:
               requests:
                 cpu: 200m
