@@ -13,7 +13,7 @@ conditional:
 blocking:
   blackLists:
     ads:
-      - https://small.oisd.nl/regex
+      - https://small.oisd.nl/domainswild
     excluded:
       - |
         # no blocking
