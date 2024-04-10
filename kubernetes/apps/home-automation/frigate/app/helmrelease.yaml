@@ -64,8 +64,8 @@ spec:
                         operator: In
                         values: ["jellyfin"]
                   topologyKey: kubernetes.io/hostname
-          nodeSelector:
-            google.feature.node.kubernetes.io/coral: "true"
+          #nodeSelector:
+          #  google.feature.node.kubernetes.io/coral: "true"
     service:
       main:
         ports:
@@ -113,9 +113,9 @@ spec:
         sizeLimit: 4Gi
         globalMounts:
           - path: /dev/shm
-      coral:
-        enabled: true
-        type: hostPath
-        hostPath: /dev/apex_0
-        globalMounts:
-          - path: /dev/apex_0
+#      coral:
+#        enabled: true
+#        type: hostPath
+#        hostPath: /dev/apex_0
+#        globalMounts:
+#          - path: /dev/apex_0
