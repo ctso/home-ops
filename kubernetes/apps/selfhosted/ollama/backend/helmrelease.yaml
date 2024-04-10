@@ -45,3 +45,9 @@ spec:
         ports:
           http:
             port: 11434
+
+    persistence:
+      data:
+        existingClaim: olama-backend
+        globalMounts:
+          - path: /root/.ollama
