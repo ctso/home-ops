@@ -90,7 +90,7 @@ spec:
           memory: 153M
 
     nodeExporter:
-      enabled: false
+      enabled: true
 
     grafana:
       enabled: false
