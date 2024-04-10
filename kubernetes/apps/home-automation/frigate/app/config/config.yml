@@ -8,8 +8,8 @@ mqtt:
   user: "{FRIGATE_MQTT_USERNAME}"
   password: "{FRIGATE_MQTT_PASSWORD}"
 
-model:
-  path: plus://4922a46b9c7b78298ce28d7d4c0ed895
+#model:
+#  path: plus://4922a46b9c7b78298ce28d7d4c0ed895
 
 database:
   path: /data/frigate.db
@@ -18,6 +18,8 @@ detectors:
   cpu:
     type: cpu
     num_threads: 8
+    model:
+      path: "/cpu_model.tflite"
 
 ffmpeg:
   global_args: ["-hide_banner", "-loglevel", "warning"]
