@@ -117,5 +117,6 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/apex_0
+        hostPathType: Directory
         globalMounts:
           - path: /dev/apex_0
