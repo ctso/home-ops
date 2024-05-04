@@ -113,3 +113,10 @@ spec:
         sizeLimit: 4Gi
         globalMounts:
           - path: /dev/shm
+      coral:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/apex_0
+        hostPathType: Directory
+        globalMounts:
+          - path: /dev/apex_0
