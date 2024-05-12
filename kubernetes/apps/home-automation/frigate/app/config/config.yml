@@ -202,7 +202,7 @@ cameras:
 
   side_yard:
     zones:
-      side_yard:
+      yard:
         coordinates: 0,0,0,360,640,360,640,360,640,199,393,79,222,0
     detect:
       width: 640
