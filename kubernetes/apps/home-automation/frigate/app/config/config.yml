@@ -106,7 +106,7 @@ go2rtc:
     frigate_living_room_lq: rtspx://10.19.1.2:7441/m2ObtOh0cHVkWo37
     frigate_living_room_hq: rtspx://10.19.1.2:7441/bsJxnITzpvQrX0LY
     frigate_side_yard_lq: rtspx://10.19.1.2:7441/w8kX45wvA2jYAejp
-    frigate_sde_yard_hq: rtsps://10.19.1.2:7441/9XMbRVvp9kAKOAtl
+    frigate_side_yard_hq: rtsps://10.19.1.2:7441/9XMbRVvp9kAKOAtl
 
 cameras:
   driveway:
