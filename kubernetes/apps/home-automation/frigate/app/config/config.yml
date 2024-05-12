@@ -208,6 +208,6 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://localhost:8554/frigate_side_yard_lq
-          roles: ["detect"]
+          roles: ["detect", "audio"]
         - path: rtsp://localhost:8554/frigate_side_yard_hq
           roles: ["record"]
