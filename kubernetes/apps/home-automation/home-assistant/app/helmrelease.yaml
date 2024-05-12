@@ -38,6 +38,10 @@ spec:
 
     service:
       main:
+        type: LoadBalancer
+        annotations:
+          external-dns.alpha.kubernetes.io/hostname: "homeassistant-local.c9s.io"
+        externalTrafficPolicy: Cluster
         ports:
           http:
             port: 8123
