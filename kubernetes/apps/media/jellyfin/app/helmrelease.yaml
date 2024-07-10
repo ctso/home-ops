@@ -81,7 +81,7 @@ spec:
         enabled: true
         className: external
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "jellyfin.c9s.io"
             paths:
               - path: /
                 service:
