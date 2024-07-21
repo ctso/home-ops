@@ -2,6 +2,7 @@
 logger:
   default: info
 
+
 mqtt:
   host: mosquitto.home-automation.svc.cluster.local
   topic_prefix: frigate
