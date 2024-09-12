@@ -22,7 +22,7 @@ spec:
           main:
             image:
               repository: ghcr.io/fluidd-core/fluidd
-              tag: v1.30.3
+              tag: v1.30.4
             resources:
               requests:
                 cpu: 10m
