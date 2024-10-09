@@ -12,6 +12,9 @@
       ],
       "matchPackageNames": [
         "cert-manager",
+        "coredns",
+        "external-dns",
+        "grafana",
         "kube-prometheus-stack",
         "node-feature-discovery",
         "reloader"
@@ -24,6 +27,7 @@
       "automerge": true,
       "automergeType": "branch",
       "matchUpdateTypes": [
+        "minor",
         "patch"
       ],
       "matchPackagePattern": [
