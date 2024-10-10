@@ -31,7 +31,7 @@ spec:
           main:
             image:
               repository: docker.io/nodered/node-red
-              tag: 3.1.12
+              tag: 3.1.14
             resources:
               requests:
                 cpu: 10m
