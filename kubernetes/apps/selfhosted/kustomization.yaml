@@ -10,3 +10,4 @@ resources:
   - ./mealie/ks.yaml
   - ./paperless/ks.yaml
   - ./ollama/ks.yaml
+  - ./actual/ks.yaml
