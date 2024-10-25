@@ -57,6 +57,7 @@ spec:
 
     service:
       main:
+        controller: atuin
         ports:
           http:
             port: *port
