@@ -8,11 +8,6 @@ access_control:
   networks:
     - name: internal
       networks: ["10.0.0.0/8"]
-  rules:
-    - domain: "ubuntu-vnc.${SECRET_DOMAIN}"
-      policy: one_factor
-      subject:
-        - ['group:admin']
 
 session:
   cookies:
