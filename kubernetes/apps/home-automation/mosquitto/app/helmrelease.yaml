@@ -71,7 +71,7 @@ spec:
       data:
         existingClaim: *app
         advancedMounts:
-          main:
+          mosquitto:
             main:
               - path: /data
       mosquitto-configfile:
