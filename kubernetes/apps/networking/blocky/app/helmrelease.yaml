@@ -55,7 +55,7 @@ spec:
           http:
             port: 4000
       dns:
-        controller: main
+        controller: blocky
         type: LoadBalancer
         externalTrafficPolicy: Cluster
         annotations:
