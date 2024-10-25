@@ -69,6 +69,6 @@ spec:
         enabled: true
         existingClaim: home-assistant
         advancedMounts:
-          main:
+          home-assistant:
             main:
               - path: /config
