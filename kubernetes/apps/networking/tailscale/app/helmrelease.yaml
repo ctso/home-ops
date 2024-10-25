@@ -61,6 +61,7 @@ spec:
         type: emptyDir
     service:
       main:
+        controller: tailscale
         ports:
           http:
             port: 2000
