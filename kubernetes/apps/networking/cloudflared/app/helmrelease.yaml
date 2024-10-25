@@ -77,14 +77,14 @@ spec:
           securityContext:
             runAsUser: 568
             runAsGroup: 568
+
     service:
       main:
+        controller: cloudflared
         ports:
           http:
             port: *port
-    serviceMonitor:
-      main:
-        enabled: true
+
     persistence:
       config:
         enabled: true
