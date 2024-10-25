@@ -61,10 +61,6 @@ spec:
             port: 21103
             enabled: true
 
-    ingress:
-      main:
-        enabled: false
-
     persistence:
       consume:
         enabled: true
