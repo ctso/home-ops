@@ -9,14 +9,14 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.6.0
+      version: 3.5.1
       sourceRef:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
   values:
     controllers:
-      main:
+      jellyfin:
         type: statefulset
         annotations:
           reloader.stakater.com/auto: "true"
@@ -87,7 +87,7 @@ spec:
             paths:
               - path: /
                 service:
-                  name: main
+                  identifier: main
                   port: http
         tls:
           - hosts:
