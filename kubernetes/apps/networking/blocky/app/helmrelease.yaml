@@ -8,14 +8,14 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.6.0
+      version: 3.5.1
       sourceRef:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
   values:
     controllers:
-      main:
+      blocky:
         annotations:
           reloader.stakater.com/auto: "true"
         replicas: 2
