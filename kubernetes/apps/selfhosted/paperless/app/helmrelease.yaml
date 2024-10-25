@@ -77,6 +77,7 @@ spec:
 
     service:
       main:
+        controller: paperless
         ports:
           http:
             port: 8000

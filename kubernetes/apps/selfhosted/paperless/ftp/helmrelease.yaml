@@ -41,6 +41,7 @@ spec:
 
     service:
       main:
+        controller: paperless-ftp
         type: LoadBalancer
         annotations:
           io.cilium/lb-ipam-ips: *ipaddr

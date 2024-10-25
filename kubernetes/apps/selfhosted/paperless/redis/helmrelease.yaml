@@ -33,6 +33,7 @@ spec:
 
     service:
       main:
+        controller: paperless-redis
         ports:
           http:
             enabled: false
