@@ -9,4 +9,3 @@ resources:
   - ./k8s-gateway/ks.yaml
   - ./multus/ks.yaml
   - ./nginx/ks.yaml
-  - ./tailscale/ks.yaml
