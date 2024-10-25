@@ -47,6 +47,7 @@ spec:
                 memory: 256Mi
               limits:
                 memory: 1024Mi
+
     service:
       main:
         ports:
@@ -67,9 +68,7 @@ spec:
             enabled: true
             port: 53
             protocol: UDP
-    serviceMonitor:
-      main:
-        enabled: true
+
     persistence:
       config:
         enabled: true
