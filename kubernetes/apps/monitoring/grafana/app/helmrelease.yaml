@@ -89,15 +89,6 @@ spec:
           revision: 3
           datasource: Prometheus
 
-        blocky:
-          gnetId: 13768
-          revision: 3
-          datasource:
-            - name: "DS_PROMETHEUS"
-              value: Prometheus
-            - name: "VAR_BLOCKY_URL"
-              value: 'http:\\/\\/blocky.networking.svc.cluster.local:4000'
-
       ceph:
         ceph-cluster:
           gnetId: 2842
