@@ -50,6 +50,7 @@ spec:
 
     service:
       main:
+        controller: blocky
         ports:
           http:
             port: 4000
