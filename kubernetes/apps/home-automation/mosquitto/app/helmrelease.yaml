@@ -63,9 +63,6 @@ spec:
           external-dns.alpha.kubernetes.io/hostname: "mqtt.${SECRET_DOMAIN}"
         externalTrafficPolicy: Cluster
         ports:
-          http:
-            enabled: false
-            port: 80
           mqtt:
             enabled: true
             port: 1883
