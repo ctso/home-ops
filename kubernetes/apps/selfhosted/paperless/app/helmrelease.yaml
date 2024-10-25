@@ -109,13 +109,13 @@ spec:
         enabled: true
         existingClaim: "paperless"
         advancedMounts:
-          main:
+          paperless:
             main:
               - path: /data/local
       nfs:
         enabled: true
         existingClaim: paperless-nfs
         advancedMounts:
-          main:
+          paperless:
             main:
               - path: /data/nfs
