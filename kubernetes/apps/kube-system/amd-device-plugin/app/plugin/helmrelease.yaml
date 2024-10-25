@@ -49,6 +49,7 @@ spec:
                 drop: ["ALL"]
     service:
       main:
+        controller: amd-device-plugin
         enabled: false
     persistence:
       sys:
