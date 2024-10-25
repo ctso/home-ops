@@ -69,7 +69,7 @@ spec:
         enabled: true
         existingClaim: esphome
         advancedMounts:
-          main:
+          esphome:
             main:
               - path: /config
       secrets:
