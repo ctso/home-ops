@@ -49,9 +49,6 @@ spec:
       main:
         enabled: true
         className: internal
-        annotations:
-          hajimari.io/enable: "true"
-          hajimari.io/icon: mdi:robot-love
         hosts:
           - host: &host llm.${SECRET_DOMAIN}
             paths:

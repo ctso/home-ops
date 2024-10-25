@@ -6,7 +6,6 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./atuin/ks.yaml
-  - ./hajimari/ks.yaml
   - ./mealie/ks.yaml
   - ./paperless/ks.yaml
   - ./ollama/ks.yaml
