@@ -61,6 +61,7 @@ spec:
             fsGroupChangePolicy: OnRootMismatch
     service:
       main:
+        controller: sabnzbd
         ports:
           http:
             port: *port

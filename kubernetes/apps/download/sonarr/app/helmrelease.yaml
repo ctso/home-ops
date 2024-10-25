@@ -54,6 +54,7 @@ spec:
 
     service:
       main:
+        controller: sonarr
         ports:
           http:
             port: *port

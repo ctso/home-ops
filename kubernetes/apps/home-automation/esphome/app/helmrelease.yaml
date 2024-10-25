@@ -44,6 +44,7 @@ spec:
 
     service:
       main:
+        controller: esphome
         ports:
           http:
             port: 6052

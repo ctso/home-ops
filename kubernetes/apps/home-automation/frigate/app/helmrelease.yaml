@@ -68,6 +68,7 @@ spec:
             google.feature.node.kubernetes.io/coral: "true"
     service:
       main:
+        controller: frigate
         ports:
           http:
             port: *port

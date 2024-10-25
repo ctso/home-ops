@@ -38,6 +38,7 @@ spec:
 
     service:
       main:
+        controller: home-assistant
         type: LoadBalancer
         annotations:
           external-dns.alpha.kubernetes.io/hostname: "homeassistant-local.c9s.io"
