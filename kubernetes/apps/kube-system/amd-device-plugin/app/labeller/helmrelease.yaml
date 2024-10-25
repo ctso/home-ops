@@ -69,6 +69,7 @@ spec:
       name: amd-gpu-node-labeller
     service:
       main:
+        controller: amd-gpu-node-labeller
         enabled: false
     persistence:
       sys:
