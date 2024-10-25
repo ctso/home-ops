@@ -65,6 +65,7 @@ spec:
         ports:
           http:
             enabled: false
+            port: 80
           mqtt:
             enabled: true
             port: 1883
