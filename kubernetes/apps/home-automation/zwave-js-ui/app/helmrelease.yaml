@@ -74,9 +74,6 @@ spec:
             port: *port
           websocket:
             port: 3000
-    serviceMonitor:
-      main:
-        enabled: true # requires https://github.com/kvaster/zwavejs-prom
     ingress:
       main:
         enabled: true
