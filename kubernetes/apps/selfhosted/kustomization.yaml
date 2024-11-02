@@ -7,4 +7,3 @@ resources:
   # Flux-Kustomizations
   - ./atuin/ks.yaml
   - ./paperless/ks.yaml
-  - ./ollama/ks.yaml
