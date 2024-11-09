@@ -6,4 +6,3 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./home-assistant/ks.yaml
-  - ./zwave-js-ui/ks.yaml
