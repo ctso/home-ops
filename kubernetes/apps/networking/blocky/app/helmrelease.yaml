@@ -24,7 +24,7 @@ spec:
           main:
             image:
               repository: ghcr.io/0xerr0r/blocky
-              tag: v0.24
+              tag: v0.25
             probes:
               liveness: &probes
                 enabled: true
